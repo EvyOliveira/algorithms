@@ -33,10 +33,10 @@ func main() {
 	executionTimeInMilliseconds := float64(executionTimeInNanosecounds) / float64(time.Millisecond)
 
 	if index != -1 {
-		fmt.Printf("Execution time: %.3f milliseconds\n", executionTimeInMilliseconds)
+		fmt.Printf("execution time: %.3f milliseconds\n", executionTimeInMilliseconds)
 	} else {
-		fmt.Println("Name not found in the list:")
-		fmt.Printf("Execution time: %.3f milliseconds\n", executionTimeInMilliseconds)
+		fmt.Println("name not found in the list:")
+		fmt.Printf("execution time: %.3f milliseconds\n", executionTimeInMilliseconds)
 	}
 }
 
@@ -63,7 +63,7 @@ func (b BinarySearch) Search(target string, data []Name) int {
 
 	for start <= end {
 		if data[middle].FullName == target {
-			fmt.Println("Name found in the list:", data[middle].FullName)
+			fmt.Println("name found in the list:", data[middle].FullName)
 			return middle
 		} else if data[middle].FullName > target {
 			end = middle - 1
@@ -72,7 +72,7 @@ func (b BinarySearch) Search(target string, data []Name) int {
 		}
 		middle = (end + start) / 2
 		operation++
-		fmt.Println("Number of binary search operations performed:", operation)
+		fmt.Println("number of binary search operations performed:", operation)
 	}
 	return -1
 }
