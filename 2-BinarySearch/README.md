@@ -5,7 +5,7 @@
 </br>
 
 ## Pesquisa ou Busca Binária
-Consiste em repartir uma lista ordenada até chegar no conteúdo buscado, uma solução que possibilita ser realizada com o menos número de tentativas possíveis. A estratégia da busca binária é chutar um número intermediário e eliminara metade dos números a cada vez que a estrutura for repartida.
+Consiste em repartir uma lista ordenada até chegar no conteúdo buscado, uma solução que possibilita ser realizada com o menos número de tentativas possíveis. A estratégia da busca binária é chutar um número intermediário e eliminar a metade dos números a cada vez que a estrutura for repartida.
 A pesquisa simples é quando você precisa percorrer uma lista inteira para identificar o conteúdo buscado, minando a performance do programa. De maneira geral, uma lista de n números, a pesquisa simples necessitará verificar em n etapas, enquanto a pesquisa binária necessita de log² n. 
 
 ### Exercícios:
