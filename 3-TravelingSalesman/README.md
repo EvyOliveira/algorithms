@@ -14,18 +14,22 @@ Seriam 100 milissegundos (ms) considerando o pior cenário para a buscaa simples
 
 ### Ordenação de tempos de execução Big O
 Ordenação de tempos de execução do mais rápido para o mais lento:
-* Tempo logarítmico O(log n)
-* Tempo linear O(n)
-* Algoritmo de ordenação rápida 0(n* log n)
-* Algoritmo lento de ordenação O(n²)
-* Algoritmo mais lento O(n!)
+* Tempo logarítmico O(log n);
+* Tempo linear O(n);
+* Algoritmo de ordenação rápida 0(n* log n);
+* Algoritmo lento de ordenação O(n²) e;
+* Algoritmo mais lento O(n!).
 
 
 ### Exercícios:
 1. Forneça o tempo de execução para um dos casos a seguir em termos da notação Big O.
+</br>
   1.3 Você tem um nome e deseja encontrar o número de telefone para esse nome em uma agência telefônica.
+  </br>
   1.4 Você tem um número de telefone e deseja encontrar o dono dele em uma agenda telefônica.
+  </br>
   1.5 Você quer ler o número de cada pessoa na agenda telefônica.
+  </br>
   1.6 Você quer ler os números apenas dos nomes que começam com A.
 </br>
 
