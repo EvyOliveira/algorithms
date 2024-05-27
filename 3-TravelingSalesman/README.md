@@ -34,5 +34,6 @@ Ordenação de tempos de execução do mais rápido para o mais lento:
 </br>
 
 ## O Caixeiro-Viajante
-Algoritmo de crescimento exorbitante e entendedores acreditam que esse algoritmo possa ser melhorado, chamado de o problema do caixeiro-viajante. A ideia é simular o menor trecho possível a ser percorrido, analisando as possibilidades que devem ser visitadas. O tempo de execução para o problema do caixeiro-viajante é de O(n!) ou tempo fatorial e performa melhor em menor números.
-Quando temos um número maior a ser calculado pela proposta deste algoritmo, não temos uma opção mais veloz capaz de trazer resposta, isto é, o que se consegue fazer é chegar numa resposta aproximada.
+Algoritmo de crescimento exorbitante e entendedores acreditam que esse algoritmo possa ser melhorado, chamado de o problema do caixeiro-viajante. A ideia é simular o menor trecho possível a ser percorrido, analisando as possibilidades que devem ser visitadas e ao final, retornar ao ponto de partida, visitando cada parada somente uma vez. O tempo de execução para o problema do caixeiro-viajante é de O(n!) ou tempo fatorial e performa melhor em menor números.
+Quando temos um número maior a ser calculado pela proposta deste algoritmo, não temos uma opção mais veloz capaz de trazer resposta, isto é, o que se consegue fazer é chegar numa resposta aproximada. 
+Para solucionar esse problema, faremos uso do algoritmo heurístico da Inserção Mais Próxima, um método que é simples e rápido, mas não garante a solução ótima.
