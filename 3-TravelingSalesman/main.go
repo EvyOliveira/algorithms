@@ -96,11 +96,11 @@ func main() {
 
 	route, err := userCase.execute(cities)
 	if err != nil {
-		fmt.Println("Error finding route: ", err)
+		fmt.Println("error finding route:", err)
 		return
 	}
 
-	fmt.Println("Route:", route)
+	fmt.Println("route:", route)
 	for _, city := range route.Cities {
 		fmt.Println("-", city.Name)
 	}
