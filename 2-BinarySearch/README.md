@@ -10,10 +10,10 @@ A pesquisa simples é quando você precisa percorrer uma lista inteira para iden
 
 ### Exercícios:
 1.1 Suponha que você tenha uma lista com 128 nomes e esteja fazendo uma pesquisa binária. Qual seria o número máximo de etapas que você levaria para encontrar o nome desejado?
-Cálculo dos 128 nomes: 128 -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1, totalizando 8 etapas até encontrar o número desejado.
+Cálculo dos 128 nomes: 128 nomes -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1,  totalizando 7 etapas até encontrar o número desejado.
 
 1.2 Suponha que você duplique o tamanho da lista. Qual seria o número máximo de etapas agora?
-Cálculo dos 256 nomes: 256 -> 128 -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1, totalizando 9 etapas até encontrar o número desejado.
+Cálculo dos 256 nomes: 256 nomes -> 128 -> 64 -> 32 -> 16 -> 8 -> 4 -> 2 -> 1, totalizando 8 etapas até encontrar o número desejado.
 
 ## Tempo de execução
 Quando o número máximo de tentativas é igual ao tamanho da lista, é chamado de tempo linear. A pesquisa binária é executada de acordo com o tempo logarítimo.
