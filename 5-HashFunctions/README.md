@@ -28,3 +28,38 @@ A tabela hash é a primeira estrutura de dados com uma lógica adicional, pois e
     1.4 f(x) = len(x) (usa o comprimento da string como índice).
 Resposta: 1 e 4.
 
+## Usando tabelas hash par pesquisas
+Quando há uma agend telefônica em que o nome é associado ao número, as funcionalidades previstas devem ser:
+- Adicionar o nome e o número de telefone associado ao telefone;
+- Inserir o nome de uma pessoa e receber o número associado à ela.
+Sendo assim, tabelas hash é ideal quando você precisar mapear algum item com relação a outro ou quando pesquisar algo. Outro exemplo é a aplicação para pesquisas muito maiores como um campo dedicado para url e a tradução para um endereço de IP, chamada de resolução de DNS.
+
+### Evitando entradas duplicadas 
+Numa votação feita manualmente, foi registrado os nomes dos votantes por uma lista. A ideia é criar uma tabela hash para quem já votou e quando alguém chegar para votar, seria necessário acessar um GET na tabela hash e caso não retornar, é porque ainda o cidadão ainda não teria votado.
+Falando de tabela de pessoas que já tinham votado, se não tivéssemos uma tabela hash, teríamos que fazer uma lista simples percorrendo toda a lista com tempo de execução O(n) e checagem de duplicatas é feito de maneira mais veloz por tabela hash.
+
+## Usando tabelas hash como cache
+É visto como uma boa prática quando falamos de um site com um servidor que possui delay para processar dados para processar os dados e mostrar ao cliente. Para tornar o site mais rápido e fazer com que os servidores trabalhem menos, o cache memoriza os dados ao invés de recarregá-los à cada solicitação. O cache ajuda na resposta instantânea ou ao menos bem mais rápida e o site trabalharia menos.
+Isto quer dizer que todos os cachings são armazenados em uma tabela hash. Dessa forma, o servidor trabalhará somente se a url não estiver armazenada no cache. Antes de retornar os dados, serão salvos os dados no cache. Sendo assim, a próxima vez que for solicitada a url, poderá enviar os dados do cache ao invés de fazer o servidor executar a tarefa. 
+
+### Colisões
+No cenário ideal, a função hash deve mapear diferentes chaves para diferentes espaços, mas nem sempre é feito na prática por conta de um cenário de colisão. Sabendo que o array tem sido ordenado pelos preços dos produtos em ordem alfabética e que cada espaço esteja destinado para armazenar produtos iniciadas com letras do alfabeto, eventualmente pode ocorrer de duas chaves estarem indicadas para um mesmo espaço. E para resolver esse problema, é recomendável que seja implementada um lista encadeada no espaço identificado como em colisão.
+Dessa forma, quando quisermos buscar pela lista encadeada dentro de um array, a informação será retornada de maneira mais lenta, mas se a lista encadeada for pequena, não comprometerá o desempenho do algoritmo. Quando há mais elementos armazenados na lista encadeada ao invés da tabela hash, a lista encadeada diminuirá o tempo de execução da tabela hash, exceto se escolher uma boa função hash que evite colisões.
+
+### Desempenho
+Até o momento, foi abordado sempre o pior cenário e falando de cenário médio também, falaremos de desempenho das funções hashs quando comparados com outros algoritmos:
+
+| Operação |                      Caso médio                         |                   Pior caso                    |
+| -------- | ------------------------------------------------------- | -----------------------------------------------|
+| Processa |                         O(1)                            |                      O(n)                      |
+| Inserção |                         O(1)                            |                      O(n)                      |
+| Remoção  |                         O(1)                            |                      O(n)                      |
+           | Tempo constante (tempo estável independente do tamanho) | Tempo Linear (aumentando no decorrer do tempo) |
+
+Lembrando que retornar um item do array também possui tempo constante.Fazendo um comparativo das tabelas hashs com arrays e listas, temos:
+
+| Operação | Tabela Hash: Caso médio | Tabela Hash: Pior caso | Arrays | Listas encadeadas |
+| -------- | ----------------------- | ---------------------- | ------ | ----------------- |
+| Busca    |          O(1)           |         O(n)           |  O(1)  |       O(n)        |
+| Inserção |          O(1)           |         O(n)           |  O(n)  |       O(1)        |
+| Remoção  |          O(1)           |         O(n)           |  O(n)  |       O(1)        |
