@@ -54,7 +54,7 @@ Até o momento, foi abordado sempre o pior cenário e falando de cenário médio
 | Processa |                         O(1)                            |                      O(n)                      |
 | Inserção |                         O(1)                            |                      O(n)                      |
 | Remoção  |                         O(1)                            |                      O(n)                      |
-           | Tempo constante (tempo estável independente do tamanho) | Tempo Linear (aumentando no decorrer do tempo) |
+|          | Tempo constante (tempo estável independente do tamanho) | Tempo Linear (aumentando no decorrer do tempo) |
 
 Lembrando que retornar um item do array também possui tempo constante.Fazendo um comparativo das tabelas hashs com arrays e listas, temos:
 
@@ -63,3 +63,29 @@ Lembrando que retornar um item do array também possui tempo constante.Fazendo u
 | Busca    |          O(1)           |         O(n)           |  O(1)  |       O(n)        |
 | Inserção |          O(1)           |         O(n)           |  O(n)  |       O(1)        |
 | Remoção  |          O(1)           |         O(n)           |  O(n)  |       O(1)        |
+
+Para um caso médio da tabela hash, são velozes quanto os arrays na busca (pegar valores dos índices) e velozes quanto as listas de inserção e remoção de itens. Mas no pior caso, as tabelas hashs são lentas para os casos anteriores e para não operar no pior caso, evite colisões através de um baixo fator de carga e uma boa função hash.
+
+### Fator de carga
+O cálculo é feito considerando o número de itens de uma tabela hash / número total de espaços. Para o cenário de armazenamento de cem produtos na tabela hash considerando 100 espaços, cada item terá seu espaço. Neste caso, terá fator de carga de 1. Quando temos um fator de carga superior a 1, indicará que será impossível que cada item terá seu próprio espaço e caso o fator de carga cresça demais, precisará de mais espaços na tabela hash, processo denominado de redirecionamento. Normalmente, o redimensionamento é aplicado quando o fator de carga estiver acima de 0.7 e muito próximo de 1, duplicando o tamanho da estrutura do array reinnserindo os valores para a nova tabela hash, garantindo menos colisões e com melhor desempenho.
+
+### Uma boa função hash
+É considerado uma boa função hash quando os valores são distribuídos simetricamente, não ideal uma função hash que agrupa valores e produz diversas colisões.
+
+### Exercícios:
+É importante que funções hash tenham uma boa distribuição. Dessa forma, elas ficam com o mapeamento mais amplo possível. O pior caso é uma função hash que mapeia todos os itens para o mesmo espaço da tabela hash. Suponha que você tenha estas quatro funções hash que operam com strings:
+</br>
+  A. Retorne "1" para qualquer entrada.
+  B. Use o comprimento da string como o índice.
+  C. Use o primeiro caractere da string como índice. Assim, todas as strings que iniciam com a letra a são hasheadas juntas e assim por diante.
+  D. Mapeie cada letra para um número primo: a = 2, b = 3, c = 5, d = 7, e = 11, e assim por diante. Para uma string, a função hash é a soma de todos os caracteres-módulo conforme o tamanho da hash. Se o tamanho da sua hash for 10, por exemplo, e a string for "bag", o índice será (3 + 2 + 17) % 10 = 22 % 10 = 2.
+  </br>
+  Para cada um desses exemplos, qual função hash fornecerá uma boa distribuição? Considere que o tamanho da tabela hash tenha dez espaços.
+  </br>
+  1.1 Uma lista telefônica em que as chaves são os nomes e os valores são os números telefônicos. Os nomes são os seguintes: Esther, Ben, Bob e Dan.
+  </br>
+  1.2 Um mapeamento do tamanho de baterias e sua devida potência. Os tamanhos são A, AA, AAA e AAAA.
+  </br>
+  1.3 Um mapeamento de títulos de livros e autores. Os títulos são Maus, Fun Home e Watchmen.
+  </br>
+</br>
