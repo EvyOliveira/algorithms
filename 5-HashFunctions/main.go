@@ -8,7 +8,7 @@ func isHappy(n int) bool {
 	seen := make(map[int]bool)
 	for n != 1 {
 		sum := 0
-		for n > 0 { // Loop exits when n becomes 0
+		for n > 0 {
 			digit := n % 10
 			sum += digit * digit
 			n /= 10
