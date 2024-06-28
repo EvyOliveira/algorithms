@@ -1,39 +1,30 @@
 package main
 
-import "fmt"
+import (
+	"crypto/sha256"
+	"fmt"
+)
 
-func isHappy(n int) bool {
-	seen := map[int]bool{}
-	for n != 1 {
-		sum := calculateSquareSum(n)
-		if seen[sum] {
-			return false
-		}
-		seen[sum] = true
-		n = sum
-	}
-	return true
+type Hash interface {
+	GenerateHash(input string) string
 }
 
-func calculateSquareSum(n int) int {
-	sum := 0
-	for n > 0 {
-		digit := n % 10
-		sum += digit * digit
-		n /= 10
-	}
-	return sum
+type HashSHA256 struct{}
+
+func (HashSHA256 *HashSHA256) GenerateHash(input string) string {
+	hash := sha256.New()
+	hash.Write([]byte(input))
+	return fmt.Sprintf("%x", hash.Sum(nil))
+}
+
+func GenerateHash(input string, hash Hash) string {
+	return hash.GenerateHash(input)
 }
 
 func main() {
-	var number int
+	inputString := "hello, world!"
 
-	fmt.Println("enter a positive integer:")
-	fmt.Scanf("%d", &number)
-
-	if isHappy(number) {
-		fmt.Println(number, "is a happy number.")
-	} else {
-		fmt.Println(number, "is not a happy number.")
-	}
+	hashSha256 := &HashSHA256{}
+	hash := GenerateHash(inputString, hashSha256)
+	fmt.Println("hash of", inputString, ":", hash)
 }
