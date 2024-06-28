@@ -1,18 +1,11 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func isHappy(n int) bool {
-	seen := make(map[int]bool)
+	seen := map[int]bool{}
 	for n != 1 {
-		sum := 0
-		for n > 0 {
-			digit := n % 10
-			sum += digit * digit
-			n /= 10
-		}
+		sum := calculateSquareSum(n)
 		if seen[sum] {
 			return false
 		}
@@ -20,6 +13,16 @@ func isHappy(n int) bool {
 		n = sum
 	}
 	return true
+}
+
+func calculateSquareSum(n int) int {
+	sum := 0
+	for n > 0 {
+		digit := n % 10
+		sum += digit * digit
+		n /= 10
+	}
+	return sum
 }
 
 func main() {
