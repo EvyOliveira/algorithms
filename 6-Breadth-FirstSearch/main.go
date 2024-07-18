@@ -73,6 +73,6 @@ func main() {
 	if minLength > 0 {
 		fmt.Printf("minimum word ladder size: %d\n", minLength)
 	} else {
-		fmt.Println("It is not possible to transform the initial word into the final one using the list provided.")
+		fmt.Println("it is not possible to transform the initial word into the final one using the list provided.")
 	}
 }
