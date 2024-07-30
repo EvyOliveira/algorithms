@@ -15,7 +15,6 @@ Para o espaço reservado na memória, é usada a estrutura de dados de pilha, se
 Quando utilizamos uma pilha para guardar variáveis de múltiplas funções é denominado pilha de chamada. 
 
 ### Exercício:
-</br>
   3.1 Suponha que eu forneça uma pilha de chamada como esta:
 Quais informações você pode retirar baseando-se apenas nessa pilha de chamada? Agora, vamos ver esta pilha de chamadas sendo executada com uma função recursiva. 
 </br>
@@ -29,7 +28,6 @@ As funções recursivas também utilizam pilha de chamadas. Utilizar pilha é co
 </br>
 
 ### Exercício:
-</br>
   3.2 Suponha que você acidentalmente escreva uma função recursiva que fique executando infinitamente. Como você viu, seu computador aloca memória na pilha para cada chamada de função. O que acontece com a pilha quando a função recursiva executa infinitamente?
 </br>
 
