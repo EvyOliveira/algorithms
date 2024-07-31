@@ -7,7 +7,7 @@
 ## Recursão
 Aprender a separar um problema em um caso-base e um caso recursivo fazendo uso da estratégia dividir para conquistar quebra grandes problemas em pequenas soluções.
 Recursão é quando uma função chama a si mesma, utilizado para tornar a resposta mais clara e não há nenhum benefício ao utilizar a recursão em termos de desempenho e os loops podem apresentar melhora para o desempenho do programa. Pelo fato da função recursiva chamar a si mesma, é mais fácil errar e acabar em um loop infinito.
-Outro ponto importante é determinar a condição de parada. Sendo assim, o caso-base é quando a função chama a si mesma, já o caso-base é quando a função não chama a si mesma novamente, de forma que o programa não esteja num loop infinito. Vamos explorar um tipo de estrutura de dados que nos ajudará a entender o funcionamento da recursão.
+Outro ponto importante é determinar a condição de parada. Sendo assim, o caso recursivo é quando a função chama a si mesma, já o caso-base é quando a função não chama a si mesma novamente, de forma que o programa não esteja num loop infinito. Vamos explorar um tipo de estrutura de dados que nos ajudará a entender o funcionamento da recursão.
 
 ## Pilha de Chamada
 O computador usa uma pilha interna denominada pilha de chamada. Cada vez que você chama uma função, é alocada uma caixa de memória para a chamada. A variável passada por parâmetro da função é setada para o valor desejado e é salvo, isso é feito para todas as chamadas de função, o computador deve salvar na memória os valores para todas as variáveis. 
