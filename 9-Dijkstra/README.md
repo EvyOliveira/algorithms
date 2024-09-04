@@ -7,6 +7,7 @@
 ## Algoritmo de Dijkstra
 Determina o caminho mínimo até X para grafos ponderados (atribuir pesos nas arestas). Quando há ciclos em grafos, o algoritmo de Djikstra não funciona. 
 Retomando o conceito de pesquisa em largura, em grafos de um ponto para o outro, pode ser adicionado um tempo de deslocamento entre os nós. Sendo assim, para calcular o caminho com menor número de etapas (arestas), poderá ser atendido com a pesquisa em largura, já o caminho mais rápido pode ser obtido por meio do algoritmo de Djikstra. As etapas que o algoritmo de Djikstra percorre estão listados abaixo:
+
 </br>
   1. Encontre o vértice mais "barato", pois será o nó que possibilitará chegar no menor tempo possível.
 </br>
@@ -16,12 +17,13 @@ Retomando o conceito de pesquisa em largura, em grafos de um ponto para o outro,
 </br>
   4. Calcule o caminho final.
 </br>
+
 Detalhando melhor o que ocorre após escolher o ponto mais próximo do ínicio e que tenha menos tempo de deslocamento, é realizada uma atualização de cálculo de custo para chegar em todos os vértices próximos ou vizinhos de qual estamos em menos tempo e reduzir o custo total. As etapas devem ser executadas recursivamente até chegarmos ao final do percurso.
 
 ### Terminologia
 Cada aresta do grafo tem um número associado chamado de peso, sendo um grafo com pesos denominado de grafo ponderado (grafo valorado). Por outro lado, um grafo sem peso é chamado de grafo não ponderado (grafo não valorado). Em outras palavras, calcular o caminho mínimo em um grafo não ponderado deve-se utilizar a pesquisa em largura e para calcular o caminho mínimo de um grafo ponderado, utilize o algoritmo de Djikstra. 
 Grafos pode conter ciclos, indicando que é possível começar em um vértice, viajar nele e terminar no mesmo vértice ou até mesmo evitar o caminho do ciclo, avaliando o que terá mais ou menos peso. Sendo assim, se seguir o ciclo adicionará mais peso no peso total, seguir o ciclo jamais fornecerá o caminho mínimo. 
-Um grafo não direcionado é quando cada vértice adiciona um novo ciclo, pondendo apontar para seu respectivo vértice se tratando de dois vértices. O algoritmo de Djikstra só funciona em grafos sem cilos ou em grafos com um ciclo de peso positivo, uma vez que seguir o ciclo nunca indicará um ciclo de peso positivo.
+Um grafo não direcionado é quando cada vértice adiciona um novo ciclo, pondendo apontar para seu respectivo vértice se tratando de dois vértices. O algoritmo de Djikstra só funciona em grafos sem ciclos ou em grafos com um ciclo de peso positivo, uma vez que seguir o ciclo nunca indicará um ciclo de peso positivo.
 
 ### Na prática
 Depois de compreender o custo entre os vértices, é importante fazer uma tabela para registrar a custo para chegar em cada um dos vértices. Quando falamos de vértices diretos, sabemos o quanto de custo teremos, mas para vértices indiretos, consideraremos como custo infinito.
